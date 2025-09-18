@@ -136,25 +136,32 @@ export default function Home() {
               variants={itemVariants}
               className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-tight"
             >
-              <span className="block">Trasformiamo i tuoi</span>
-              <span className="block text-gradient">sogni in eventi</span>
-              <span className="block">indimenticabili</span>
+              <span className="block">Benvenuti su</span>
+              <span className="block text-gradient">La Piana d'Oro</span>
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p 
               variants={itemVariants}
-              className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto"
+              className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-4xl mx-auto"
             >
-              La Piana D'oro è specializzata nell'organizzazione di matrimoni da sogno, 
-              eventi corporate di successo e celebrazioni uniche che lasciano il segno.
+              L'associazione culturale e territoriale che valorizza Bagheria, i suoi prodotti tipici, le tradizioni, l'identità e il gusto. 
+              Organizziamo eventi, progetti di rigenerazione urbana, manifestazioni enogastronomiche e iniziative per educare e coinvolgere la comunità locale.
+            </motion.p>
+
+            {/* Call to action text */}
+            <motion.p 
+              variants={itemVariants}
+              className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto"
+            >
+              Scopri i nostri progetti, gli eventi e come puoi partecipare. Bagheria ha tanto da offrire: aiutaci a farla conoscere, rispettare e amare.
             </motion.p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Button asChild size="lg" className="gradient-luxury text-accent-foreground shadow-luxury hover:shadow-hover transition-luxury text-lg px-8 py-6">
                 <Link href="/contatti" className="flex items-center gap-3">
-                  <span>Richiedi Preventivo</span>
+                  <span>Sostieni i Nostri Progetti</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
@@ -189,38 +196,38 @@ export default function Home() {
               variants={itemVariants}
               className="text-4xl md:text-6xl font-bold mb-6"
             >
-              I Nostri <span className="text-gradient">Servizi</span>
+              I Nostri <span className="text-gradient">Progetti</span>
             </motion.h2>
             <motion.p 
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              Dall'ideazione alla realizzazione, ci occupiamo di ogni dettaglio per 
-              rendere ogni evento perfetto e memorabile.
+              Dalla valorizzazione del territorio alla rigenerazione urbana, realizziamo progetti 
+              che rafforzano l'identità culturale e sociale di Bagheria.
             </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: Heart,
-                title: "Matrimoni",
-                description: "Il giorno più importante della vostra vita merita la perfezione assoluta.",
-                features: ["Coordinamento completo", "Location da sogno", "Catering personalizzato", "Fotografia e video"],
+                title: "Un Giardino per Bagheria",
+                description: "Progetto di rigenerazione urbana per trasformare Piazza Carlo Doglio in uno spazio verde e condiviso.",
+                features: ["Pulizia e manutenzione", "Coinvolgimento scuole", "Partecipazione cittadini", "Crowdfunding"],
+                image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop&crop=entropy&auto=format",
                 color: "primary"
               },
               {
-                icon: Users,
-                title: "Eventi Corporate",
-                description: "Conferenze, convention e team building che rafforzano il vostro brand.",
-                features: ["Meeting aziendali", "Lanci di prodotto", "Gala e premiazioni", "Team building"],
+                title: "Sfincione Fest",
+                description: "Manifestazione che celebra lo sfincione bianco di Bagheria con panificatori e degustazioni.",
+                features: ["Valorizzazione prodotti tipici", "Coinvolgimento panificatori", "Iniziative culturali", "Riconoscimento certificato"],
+                image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=600&fit=crop&crop=entropy&auto=format",
                 color: "accent"
               },
               {
-                icon: Calendar,
-                title: "Feste Private",
-                description: "Compleanni, anniversari e celebrazioni speciali su misura per voi.",
-                features: ["Feste di compleanno", "Anniversari", "Cene di gala", "Eventi a tema"],
+                title: "La Piana di Baaria",
+                description: "Progetto di marketing territoriale per promuovere Bagheria come Destinazione del Gusto.",
+                features: ["Promozione turistica", "Cultura enogastronomica", "Collaborazione pubblico-privato", "Eventi territoriali"],
+                image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=entropy&auto=format",
                 color: "primary"
               }
             ].map((service) => (
@@ -235,6 +242,18 @@ export default function Home() {
                 className="group perspective-1000"
               >
                 <Card className="glass-effect border-white/20 shadow-luxury hover:shadow-hover transition-luxury h-full relative overflow-hidden group-hover:scale-105 transform-gpu">
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <div 
+                      className="w-full h-full bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${service.image})`,
+                      }}
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                  </div>
+                  
                   {/* Card Glow Effect */}
                   <motion.div
                     className={`absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-br ${
@@ -244,46 +263,20 @@ export default function Home() {
                     } transition-opacity duration-500`}
                   />
                   
-                  <CardHeader className="relative z-10">
-                    <motion.div 
-                      className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 relative ${
-                        service.color === 'primary' 
-                          ? 'bg-primary/10' 
-                          : 'bg-accent/10'
-                      }`}
-                      whileHover={{ 
-                        scale: 1.1,
-                        rotate: 5,
-                        transition: { duration: 0.2 }
-                      }}
-                    >
-                      <service.icon className={`h-8 w-8 ${
-                        service.color === 'primary' ? 'text-primary' : 'text-accent'
-                      }`} />
-                      <motion.div
-                        className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 ${
-                          service.color === 'primary' 
-                            ? 'bg-primary/20' 
-                            : 'bg-accent/20'
-                        } blur-lg`}
-                        whileHover={{ scale: 1.5, opacity: 0.5 }}
-                      />
-                    </motion.div>
-                    
-                    <CardTitle className="text-2xl mb-4 group-hover:text-gradient transition-all duration-300">
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col justify-end p-6">
+                    <CardTitle className="text-2xl mb-3 text-white group-hover:text-gradient transition-all duration-300">
                       {service.title}
                     </CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
+                    <CardDescription className="text-base leading-relaxed text-white/90 mb-4">
                       {service.description}
                     </CardDescription>
-                  </CardHeader>
-                  
-                  <CardContent className="relative z-10">
-                    <ul className="space-y-3">
+                    
+                    <ul className="space-y-2">
                       {service.features.map((feature, i) => (
                         <motion.li 
                           key={feature}
-                          className="flex items-center text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+                          className="flex items-center text-sm text-white/80 group-hover:text-white transition-colors duration-300"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ delay: i * 0.1 }}
@@ -298,7 +291,7 @@ export default function Home() {
                         </motion.li>
                       ))}
                     </ul>
-                  </CardContent>
+                  </div>
                 </Card>
               </motion.div>
             ))}
@@ -314,7 +307,7 @@ export default function Home() {
             >
               <Button asChild size="lg" className="glass-effect border-primary/30 text-primary hover:bg-primary/10 transition-luxury text-lg px-8 py-4">
                 <Link href="/cosa-facciamo" className="flex items-center gap-3">
-                  <span>Scopri Tutti i Servizi</span>
+                  <span>Scopri Tutti i Progetti</span>
                   <motion.div
                     initial={{ x: 0 }}
                     whileHover={{ x: 3 }}
@@ -373,14 +366,14 @@ export default function Home() {
               variants={itemVariants}
               className="text-4xl md:text-6xl font-bold mb-6"
             >
-              Perché Scegliere <span className="text-gradient">La Piana D'oro</span>
+              Perché Sostenerci <span className="text-gradient">La Piana d'Oro</span>
             </motion.h2>
             <motion.p 
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              La nostra esperienza e passione si traducono in eventi che 
-              superano ogni aspettativa e rimangono impressi per sempre.
+              Il nostro impegno per il territorio e la passione per la cultura locale 
+              si traducono in progetti concreti che migliorano la comunità bagherese.
             </motion.p>
           </motion.div>
 
@@ -388,29 +381,29 @@ export default function Home() {
             {[
               {
                 icon: Star,
-                title: "15+ Anni di Esperienza",
-                description: "Un track record consolidato nell'organizzazione di eventi di successo.",
+                title: "Dal 2016 per Bagheria",
+                description: "Un impegno costante per la valorizzazione del territorio e delle tradizioni locali.",
                 color: "primary",
                 delay: 0
               },
               {
                 icon: Users,
-                title: "Team Professionale",
-                description: "Professionisti qualificati che curano ogni aspetto del vostro evento.",
+                title: "Cittadini Attivi",
+                description: "Un gruppo di professionisti e cittadini uniti dalla passione per il territorio.",
                 color: "accent",
                 delay: 0.1
               },
               {
                 icon: Heart,
-                title: "Approccio Personalizzato",
-                description: "Ogni evento è unico, proprio come le persone che lo vivono.",
+                title: "Identità Culturale",
+                description: "Ogni progetto valorizza l'autenticità e le tradizioni della Sicilia.",
                 color: "primary",
                 delay: 0.2
               },
               {
                 icon: Calendar,
-                title: "Gestione Completa",
-                description: "Dall'ideazione alla realizzazione, pensiamo a tutto nei minimi dettagli.",
+                title: "Partecipazione Attiva",
+                description: "Coinvolgiamo scuole, istituzioni e cittadini per un impatto duraturo.",
                 color: "accent",
                 delay: 0.3
               }
@@ -578,17 +571,17 @@ export default function Home() {
                   variants={itemVariants}
                   className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
                 >
-                  <span className="block">Pronti a Realizzare</span>
-                  <span className="block text-gradient">il Vostro Evento</span>
-                  <span className="block">da Sogno?</span>
+                  <span className="block">Pronti a Valorizzare</span>
+                  <span className="block text-gradient">il Nostro Territorio</span>
+                  <span className="block">Insieme?</span>
                 </motion.h2>
                 
                 <motion.p 
                   variants={itemVariants}
                   className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto"
                 >
-                  Contattateci oggi per una consulenza gratuita e scoprite come possiamo 
-                  trasformare la vostra visione in una realtà indimenticabile.
+                  Unitevi a noi per sostenere i progetti che valorizzano Bagheria 
+                  e rafforzano la nostra identità culturale e territoriale.
                 </motion.p>
                 
                 {/* CTA Buttons */}
@@ -603,7 +596,7 @@ export default function Home() {
                   >
                     <Button asChild size="lg" className="gradient-luxury text-accent-foreground shadow-luxury hover:shadow-hover transition-luxury text-lg px-10 py-6 relative overflow-hidden">
                       <Link href="/contatti" className="flex items-center gap-3">
-                        <span className="relative z-10">Contattaci Ora</span>
+                        <span className="relative z-10">Scopri Come Partecipare</span>
                         <motion.div
                           className="relative z-10"
                           initial={{ x: 0 }}

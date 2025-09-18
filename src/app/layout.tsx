@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "La Piana D'oro | Organizzazione Eventi, Matrimoni e Celebrazioni",
-  description: "La Piana D'oro è un'associazione ETS specializzata nell'organizzazione di eventi indimenticabili, matrimoni da sogno e celebrazioni uniche. Scopri i nostri servizi di event planning.",
-  keywords: "organizzazione eventi, matrimoni, feste, corporate events, event planning, Roma, celebrazioni",
+  title: "La Piana d'Oro | Associazione Culturale Bagheria - Valorizzazione Territorio Siciliano",
+  description: "La Piana d'Oro è un'associazione ETS che valorizza Bagheria attraverso progetti di rigenerazione urbana, eventi culturali e promozione dei prodotti tipici siciliani come lo sfincione bianco.",
+  keywords: "Bagheria, associazione culturale, territorio siciliano, sfincione bianco, rigenerazione urbana, prodotti tipici, destinazione del gusto, Sicilia, tradizioni",
 };
 
 export default function RootLayout({

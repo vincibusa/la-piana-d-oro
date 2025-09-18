@@ -149,8 +149,8 @@ export default function Progetti() {
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto"
             >
-              Scoprite alcuni dei nostri eventi più significativi e lasciatevi ispirare 
-              dalle storie che abbiamo contribuito a creare.
+              Scoprite i progetti concreti che stiamo realizzando per valorizzare Bagheria 
+              e rafforzare la sua identità culturale e territoriale.
             </motion.p>
 
             {/* Decorative Elements */}
@@ -203,21 +203,21 @@ export default function Progetti() {
             initial="hidden"
             animate={portfolioInView ? "visible" : "hidden"}
           >
-            <Tabs defaultValue="matrimoni" className="w-full">
+            <Tabs defaultValue="rigenerazione" className="w-full">
               <TabsList className="grid w-full grid-cols-3 lg:w-[600px] mx-auto mb-16 glass-effect border-white/20 shadow-luxury">
-                <TabsTrigger value="matrimoni" className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary transition-luxury">
-                  Matrimoni
+                <TabsTrigger value="rigenerazione" className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary transition-luxury">
+                  Rigenerazione
                 </TabsTrigger>
-                <TabsTrigger value="corporate" className="data-[state=active]:bg-accent/10 data-[state=active]:text-accent transition-luxury">
-                  Corporate
+                <TabsTrigger value="cultura" className="data-[state=active]:bg-accent/10 data-[state=active]:text-accent transition-luxury">
+                  Cultura
                 </TabsTrigger>
-                <TabsTrigger value="private" className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary transition-luxury">
-                  Private
+                <TabsTrigger value="educazione" className="data-[state=active]:bg-primary/10 data-[state=active]:text-primary transition-luxury">
+                  Educazione
                 </TabsTrigger>
               </TabsList>
 
-            {/* Matrimoni */}
-            <TabsContent value="matrimoni" className="space-y-8">
+            {/* Rigenerazione */}
+            <TabsContent value="rigenerazione" className="space-y-8">
               <motion.div
                 variants={itemVariants}
                 className="text-center mb-16"
@@ -229,14 +229,14 @@ export default function Progetti() {
                   }}
                   transition={{ duration: 2 }}
                 >
-                  Matrimoni da <span className="text-gradient">Sogno</span>
+                  Rigenerazione <span className="text-gradient">Urbana</span>
                 </motion.h2>
                 <motion.p 
                   className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
                   variants={itemVariants}
                 >
-                  Ogni matrimonio è unico, proprio come l'amore che celebra. 
-                  Ecco alcuni dei nostri progetti più emozionanti.
+                  Recuperiamo e riqualifichiamo spazi pubblici per restituirli alla comunità. 
+                  Ecco i nostri progetti di rigenerazione urbana.
                 </motion.p>
               </motion.div>
 
@@ -263,22 +263,22 @@ export default function Progetti() {
                     </div>
                     <CardHeader className="relative z-10">
                       <div className="flex items-center justify-between mb-2">
-                        <Badge variant="secondary" className="glass-effect border-primary/30">Matrimonio</Badge>
+                        <Badge variant="secondary" className="glass-effect border-primary/30">Rigenerazione</Badge>
                         <div className="flex items-center text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                           <MapPin className="h-4 w-4 mr-1" />
-                          Villa Toscana
+                          Piazza Carlo Doglio
                         </div>
                       </div>
-                      <CardTitle className="group-hover:text-gradient transition-all duration-300">Elena & Marco</CardTitle>
+                      <CardTitle className="group-hover:text-gradient transition-all duration-300">Un Giardino per Bagheria</CardTitle>
                       <CardDescription className="group-hover:text-foreground transition-colors duration-300">
-                        Un matrimonio intimo in una villa storica toscana, con 120 invitati 
-                        e una cerimonia all'aperto seguita da una cena elegante.
+                        Trasformazione di Piazza Carlo Doglio in uno spazio verde condiviso 
+                        attraverso pulizia, manutenzione e coinvolgimento attivo dei cittadini.
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="relative z-10">
                       <div className="flex items-center justify-between">
                         <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                          Giugno 2024
+                          2019-2024
                         </div>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                           <Button variant="ghost" size="sm" className="glass-effect border-border hover:border-primary/30">
@@ -312,16 +312,16 @@ export default function Progetti() {
                     </div>
                     <CardHeader className="relative z-10">
                       <div className="flex items-center justify-between mb-2">
-                        <Badge variant="secondary" className="glass-effect border-accent/30">Matrimonio</Badge>
+                        <Badge variant="secondary" className="glass-effect border-accent/30">Riqualificazione</Badge>
                         <div className="flex items-center text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                           <MapPin className="h-4 w-4 mr-1" />
-                          Castello Romano
+                          Centro Storico
                         </div>
                       </div>
-                      <CardTitle className="group-hover:text-gradient transition-all duration-300">Giulia & Alessandro</CardTitle>
+                      <CardTitle className="group-hover:text-gradient transition-all duration-300">Spazi Pubblici Verdi</CardTitle>
                       <CardDescription className="group-hover:text-foreground transition-colors duration-300">
-                        Celebrazione sontuosa in un castello medievale con 200 invitati, 
-                        coordinamento completo e spettacolo pirotecnico finale.
+                        Progetti di riqualificazione di aree urbane dismesse 
+                        per creare nuovi spazi verdi fruibili dalla comunità.
                     </CardDescription>
                     </CardHeader>
                     <CardContent className="relative z-10">
@@ -390,8 +390,8 @@ export default function Progetti() {
               </div>
             </TabsContent>
 
-            {/* Eventi Corporate */}
-            <TabsContent value="corporate" className="space-y-8">
+            {/* Progetti Culturali */}
+            <TabsContent value="cultura" className="space-y-8">
               <motion.div
                 variants={itemVariants}
                 className="text-center mb-16"
@@ -403,14 +403,14 @@ export default function Progetti() {
                   }}
                   transition={{ duration: 2 }}
                 >
-                  Eventi <span className="text-gradient">Corporate</span>
+                  Progetti <span className="text-gradient">Culturali</span>
                 </motion.h2>
                 <motion.p 
                   className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
                   variants={itemVariants}
                 >
-                  Conferenze, lanci di prodotto e team building che rafforzano 
-                  l'identità aziendale e creano connessioni durature.
+                  Eventi e manifestazioni che valorizzano i prodotti tipici 
+                  e rafforzano l'identità culturale del territorio bagherese.
                 </motion.p>
               </motion.div>
 

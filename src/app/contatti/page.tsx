@@ -177,8 +177,8 @@ export default function Contatti() {
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto"
             >
-              Siamo qui per trasformare le vostre idee in eventi indimenticabili. 
-              Contattateci per una consulenza gratuita e personalizzata.
+              Siamo qui per accogliere volontari, sostenitori e chiunque voglia contribuire 
+              alla valorizzazione del territorio bagherese. Contattateci per sapere come partecipare.
             </motion.p>
 
             {/* Decorative Elements */}
@@ -237,14 +237,14 @@ export default function Contatti() {
                 variants={itemVariants}
                 className="text-4xl md:text-6xl font-bold mb-8"
               >
-                Richiedi un <span className="text-gradient">Preventivo</span>
+                Contatta <span className="text-gradient">l'Associazione</span>
               </motion.h2>
               <motion.p 
                 variants={itemVariants}
                 className="text-xl text-muted-foreground mb-12 leading-relaxed"
               >
-                Compilate il modulo con i dettagli del vostro evento e vi ricontatteremo 
-                entro 24 ore con una proposta personalizzata.
+                Compilate il modulo per richiedere informazioni sui progetti, 
+                diventare volontari o proporre nuove iniziative per Bagheria.
               </motion.p>
 
               <motion.div variants={itemVariants}>
@@ -255,9 +255,9 @@ export default function Contatti() {
                   />
                   
                   <CardHeader className="relative z-10">
-                    <CardTitle className="text-2xl mb-2">Dettagli Evento</CardTitle>
+                    <CardTitle className="text-2xl mb-2">Richiesta Informazioni</CardTitle>
                     <CardDescription className="text-base">
-                      Più informazioni ci fornite, più accurato sarà il nostro preventivo.
+                      Raccontateci come vorreste contribuire ai progetti dell'associazione.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="relative z-10">
@@ -302,51 +302,38 @@ export default function Contatti() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="eventType">Tipo di Evento *</Label>
+                      <Label htmlFor="interesse">Area di Interesse *</Label>
                       <select
-                        id="eventType"
+                        id="interesse"
                         className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required
                       >
-                        <option value="">Selezionate il tipo di evento</option>
-                        <option value="matrimonio">Matrimonio</option>
-                        <option value="corporate">Evento Corporate</option>
-                        <option value="festa-privata">Festa Privata</option>
-                        <option value="consulenza">Consulenza</option>
+                        <option value="">Selezionate la vostra area di interesse</option>
+                        <option value="volontariato">Volontariato</option>
+                        <option value="eventi-culturali">Eventi e Manifestazioni</option>
+                        <option value="educazione">Educazione e Formazione</option>
+                        <option value="prodotti-tipici">Valorizzazione Prodotti Tipici</option>
+                        <option value="rigenerazione-urbana">Rigenerazione Urbana</option>
+                        <option value="collaborazione">Collaborazione</option>
                         <option value="altro">Altro</option>
                       </select>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="eventDate">Data Evento</Label>
-                        <Input
-                          id="eventDate"
-                          type="date"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="guestCount">Numero Invitati</Label>
-                        <Input
-                          id="guestCount"
-                          type="number"
-                          placeholder="es. 100"
-                        />
-                      </div>
-                    </div>
-
                     <div className="space-y-2">
-                      <Label htmlFor="budget">Budget Indicativo</Label>
+                      <Label htmlFor="esperienza">Esperienza/Competenze</Label>
                       <select
-                        id="budget"
+                        id="esperienza"
                         className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       >
-                        <option value="">Selezionate una fascia</option>
-                        <option value="5000-10000">€5.000 - €10.000</option>
-                        <option value="10000-20000">€10.000 - €20.000</option>
-                        <option value="20000-50000">€20.000 - €50.000</option>
-                        <option value="50000+">€50.000+</option>
-                        <option value="da-valutare">Da valutare insieme</option>
+                        <option value="">Selezionate la vostra esperienza</option>
+                        <option value="nessuna">Nessuna esperienza specifica</option>
+                        <option value="organizzazione-eventi">Organizzazione eventi</option>
+                        <option value="educazione">Educazione/Formazione</option>
+                        <option value="marketing">Marketing e Comunicazione</option>
+                        <option value="enogastronomia">Enogastronomia</option>
+                        <option value="turismo">Turismo</option>
+                        <option value="progettazione">Progettazione urbana</option>
+                        <option value="altro">Altro</option>
                       </select>
                     </div>
 
@@ -354,7 +341,7 @@ export default function Contatti() {
                       <Label htmlFor="message">Messaggio *</Label>
                       <Textarea
                         id="message"
-                        placeholder="Raccontateci di più sul vostro evento ideale..."
+                        placeholder="Raccontateci come vorreste contribuire ai progetti dell'associazione o condividete le vostre idee per valorizzare il territorio..."
                         rows={4}
                         required
                       />
@@ -387,7 +374,7 @@ export default function Contatti() {
                         ) : (
                           <>
                             <Send className="mr-2 h-4 w-4" />
-                            Invia Richiesta
+                            Invia Messaggio
                           </>
                         )}
                         <motion.div
@@ -456,9 +443,9 @@ export default function Contatti() {
                     </CardHeader>
                     <CardContent className="relative z-10">
                       <p className="text-base mb-3">
-                        Via Roma 123<br />
-                        00100 Roma (RM)<br />
-                        Italia
+                        Via Fricano 7<br />
+                        90011 Bagheria (PA)<br />
+                        Sicilia, Italia
                       </p>
                       <Button variant="outline" size="sm" className="glass-effect border-primary/30">
                         Visualizza su Mappa
@@ -498,10 +485,10 @@ export default function Contatti() {
                     </CardHeader>
                     <CardContent className="relative z-10">
                       <p className="text-base mb-2">
-                        <strong>Principale:</strong> +39 312 345 6789
+                        <strong>Associazione:</strong> +39 091 123 4567
                       </p>
                       <p className="text-base mb-3">
-                        <strong>Emergenze:</strong> +39 312 345 6790
+                        <strong>WhatsApp:</strong> +39 345 678 9012
                       </p>
                       <Button variant="outline" size="sm" asChild className="glass-effect border-accent/30">
                         <a href="tel:+393123456789">Chiama Ora</a>
@@ -541,13 +528,13 @@ export default function Contatti() {
                     </CardHeader>
                     <CardContent className="relative z-10">
                       <p className="text-base mb-2">
-                        <strong>Generale:</strong> info@lapianaoro.it
+                        <strong>Generale:</strong> info@lapianadoro.it
                       </p>
                       <p className="text-base mb-2">
-                        <strong>Matrimoni:</strong> matrimoni@lapianaoro.it
+                        <strong>Progetti:</strong> progetti@lapianadoro.it
                       </p>
                       <p className="text-base mb-3">
-                        <strong>Corporate:</strong> corporate@lapianaoro.it
+                        <strong>Volontariato:</strong> volontari@lapianadoro.it
                       </p>
                       <Button variant="outline" size="sm" asChild className="glass-effect border-primary/30">
                         <a href="mailto:info@lapianaoro.it">Invia Email</a>
@@ -592,7 +579,7 @@ export default function Contatti() {
                         <p><strong>Domenica:</strong> Su appuntamento</p>
                       </div>
                       <p className="text-sm text-muted-foreground mt-3">
-                        * Durante gli eventi siamo disponibili 24/7
+                        * Durante eventi speciali siamo disponibili con orari estesi
                       </p>
                     </CardContent>
                   </Card>
@@ -651,8 +638,8 @@ export default function Contatti() {
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              Venite a trovarci nella nostra sede principale a Roma per una consulenza 
-              personalizzata e scoprire come possiamo realizzare il vostro evento da sogno.
+              Venite a trovarci nella nostra sede a Bagheria per conoscere i nostri progetti 
+              e scoprire come potete contribuire alla valorizzazione del territorio.
             </motion.p>
           </motion.div>
 
@@ -671,7 +658,7 @@ export default function Contatti() {
               className="text-lg text-muted-foreground mb-6"
               whileHover={{ scale: 1.02 }}
             >
-              <strong>Indirizzo:</strong> Via Roma 123, 00100 Roma (RM)
+              <strong>Indirizzo:</strong> Via Fricano 7, 90011 Bagheria (PA)
             </motion.p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -682,7 +669,7 @@ export default function Contatti() {
                 className="glass-effect border-primary/30 text-primary hover:bg-primary/10 transition-luxury"
               >
                 <a 
-                  href="https://maps.google.com/?q=Via+Roma+123,+00100+Roma+RM" 
+                  href="https://maps.google.com/?q=Via+Fricano+7,+90011+Bagheria+PA" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
@@ -759,16 +746,16 @@ export default function Contatti() {
                   variants={itemVariants}
                   className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
                 >
-                  <span className="block">Non Vedete l'Ora</span>
-                  <span className="block text-gradient">di Iniziare?</span>
+                  <span className="block">Pronti a Partecipare</span>
+                  <span className="block text-gradient">ai Nostri Progetti?</span>
                 </motion.h2>
                 
                 <motion.p 
                   variants={itemVariants}
                   className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto"
                 >
-                  Il vostro evento da sogno è a un passo dalla realtà. 
-                  Contattateci oggi e iniziamo questo viaggio insieme.
+                  La valorizzazione di Bagheria inizia con la partecipazione di tutti. 
+                  Contattateci oggi e uniamoci per il bene del territorio.
                 </motion.p>
                 
                 {/* CTA Buttons */}
@@ -782,8 +769,8 @@ export default function Contatti() {
                     className="relative group"
                   >
                     <Button asChild size="lg" className="gradient-luxury text-accent-foreground shadow-luxury hover:shadow-hover transition-luxury text-lg px-10 py-6 relative overflow-hidden">
-                      <a href="tel:+393123456789" className="flex items-center gap-3">
-                        <span className="relative z-10">Chiamaci Ora</span>
+                      <a href="tel:+390911234567" className="flex items-center gap-3">
+                        <span className="relative z-10">Contattaci Ora</span>
                         <motion.div
                           className="relative z-10"
                           initial={{ x: 0 }}
@@ -807,7 +794,7 @@ export default function Contatti() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button asChild variant="outline" size="lg" className="glass-effect border-primary/30 text-primary hover:bg-primary/10 transition-luxury text-lg px-10 py-6">
-                      <a href="mailto:info@lapianaoro.it" className="flex items-center gap-2">
+                      <a href="mailto:info@lapianadoro.it" className="flex items-center gap-2">
                         <span>Scrivici</span>
                         <Mail className="h-5 w-5" />
                       </a>

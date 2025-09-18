@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 import { Separator } from "@/components/ui/separator"
-import { Users, Heart, Award, Target, ArrowRight, Sparkles } from "lucide-react"
+import { Users, Heart, Award, ArrowRight, Sparkles } from "lucide-react"
 
 export default function ChiSiamo() {
   const [heroRef, heroInView] = useInView({ 
@@ -154,8 +154,8 @@ export default function ChiSiamo() {
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto"
             >
-              La Piana D'oro nasce dalla passione per l'eccellenza e il desiderio di creare 
-              momenti indimenticabili attraverso eventi curati nei minimi dettagli.
+              La Piana d'Oro nasce nel 2016 da un gruppo di cittadini e professionisti 
+              con l'obiettivo di promuovere lo sviluppo territoriale e la cultura agroalimentare locale.
             </motion.p>
 
             {/* Decorative Elements */}
@@ -218,146 +218,64 @@ export default function ChiSiamo() {
                 }}
                 transition={{ duration: 2 }}
               >
-                La Nostra <span className="text-gradient">Mission</span>
+                La Nostra <span className="text-gradient">Storia</span>
               </motion.h2>
               
               <motion.p 
                 variants={itemVariants}
                 className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed"
               >
-                Come associazione ETS (Ente del Terzo Settore), La Piana D'oro si dedica 
-                all'organizzazione di eventi che non solo soddisfano le aspettative, ma 
-                creano ricordi duraturi e significativi.
+                La Piana d'Oro nasce nel 2016, da un gruppo di cittadini e professionisti 
+                con l'obiettivo di promuovere lo sviluppo territoriale, la cultura agroalimentare locale 
+                e la tradizione bagherese.
               </motion.p>
               
-              <motion.p 
-                variants={itemVariants}
-                className="text-lg text-muted-foreground mb-12 leading-relaxed"
-              >
-                La nostra mission è trasformare ogni celebrazione in un'esperienza unica, 
-                combinando creatività, professionalità e attenzione ai dettagli per 
-                realizzare eventi che riflettano la personalità e i desideri dei nostri clienti.
-              </motion.p>
-              
-              <motion.div 
-                variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button asChild className="gradient-luxury text-accent-foreground shadow-luxury hover:shadow-hover transition-luxury text-lg px-8 py-6">
-                    <Link href="/contatti" className="flex items-center gap-3">
-                      <span>Scopri i Nostri Servizi</span>
-                      <motion.div
-                        initial={{ x: 0 }}
-                        whileHover={{ x: 3 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ArrowRight className="h-5 w-5" />
-                      </motion.div>
-                    </Link>
-                  </Button>
-                </motion.div>
-              </motion.div>
             </motion.div>
 
-            {/* Vision & Values Cards */}
+            {/* Team Image */}
             <motion.div 
               variants={itemVariants}
-              className="space-y-8"
+              className="relative"
             >
               <motion.div
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group"
+                whileHover={{ scale: 1.02 }}
+                className="group relative overflow-hidden rounded-3xl"
               >
-                <Card className="glass-effect border-white/20 shadow-luxury hover:shadow-hover transition-luxury relative overflow-hidden">
-                  {/* Card Glow Effect */}
-                  <motion.div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary/30 to-accent/20 transition-opacity duration-500"
-                  />
-                  
-                  <CardHeader className="relative z-10">
-                    <motion.div 
-                      className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 glass-effect border-white/20"
-                      whileHover={{ 
-                        scale: 1.1,
-                        rotate: 5,
-                        transition: { duration: 0.3 }
-                      }}
-                    >
-                      <Target className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
-                      <motion.div
-                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-40 bg-primary/20 blur-md"
-                        whileHover={{ scale: 1.3, opacity: 0.6 }}
-                      />
-                    </motion.div>
-                    
-                    <CardTitle className="text-2xl mb-4 group-hover:text-gradient transition-all duration-300">
-                      Vision
-                    </CardTitle>
-                    <CardDescription className="text-lg leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                      Essere il punto di riferimento per eventi di qualità che emozionano e ispirano, 
-                      creando esperienze che rimangono nel cuore per sempre.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group"
-              >
-                <Card className="glass-effect border-white/20 shadow-luxury hover:shadow-hover transition-luxury relative overflow-hidden">
-                  {/* Card Glow Effect */}
-                  <motion.div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-br from-accent/30 to-primary/20 transition-opacity duration-500"
-                  />
-                  
-                  <CardHeader className="relative z-10">
-                    <motion.div 
-                      className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 glass-effect border-white/20"
-                      whileHover={{ 
-                        scale: 1.1,
-                        rotate: -5,
-                        transition: { duration: 0.3 }
-                      }}
-                    >
-                      <Heart className="h-8 w-8 text-accent group-hover:scale-110 transition-transform duration-300" />
-                      <motion.div
-                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-40 bg-accent/20 blur-md"
-                        whileHover={{ scale: 1.3, opacity: 0.6 }}
-                      />
-                    </motion.div>
-                    
-                    <CardTitle className="text-2xl mb-4 group-hover:text-gradient transition-all duration-300">
-                      Valori
-                    </CardTitle>
-                    <CardDescription className="text-lg leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                      Passione, eccellenza, innovazione e rispetto per ogni singolo cliente. 
-                      La qualità e l'autenticità guidano ogni nostro progetto.
-                    </CardDescription>
-                  </CardHeader>
-
-                  {/* Sparkle Effect */}
-                  <motion.div
-                    className="absolute top-4 right-4 w-3 h-3"
-                    animate={{
-                      scale: [0, 1, 0],
-                      rotate: [0, 180, 360],
-                      opacity: [0, 1, 0],
+                {/* Team Image */}
+                <div className="aspect-square relative">
+                  <div 
+                    className="w-full h-full bg-cover bg-center rounded-3xl"
+                    style={{
+                      backgroundImage: "url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop&crop=entropy&auto=format)",
                     }}
-                    transition={{
-                      duration: 2,
-                      delay: 1,
-                      repeat: Infinity,
-                      repeatDelay: 3,
-                    }}
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-3xl" />
+                </div>
+                
+                {/* Text Overlay */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <motion.h3 
+                    className="text-2xl font-bold text-white mb-2"
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <Sparkles className="w-3 h-3 text-accent" />
-                  </motion.div>
-                </Card>
+                    Il Nostro Team
+                  </motion.h3>
+                  <motion.p 
+                    className="text-white/90 text-base"
+                    whileHover={{ y: -2 }}
+                  >
+                    Cittadini, professionisti e volontari uniti dalla passione per Bagheria
+                  </motion.p>
+                </div>
+                
+                {/* Glass effect border */}
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-white/20 group-hover:ring-white/30 transition-all duration-300" />
+                
+                {/* Hover Glow Effect */}
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary/30 to-accent/20 transition-opacity duration-500 rounded-3xl"
+                />
               </motion.div>
             </motion.div>
           </motion.div>
@@ -365,6 +283,90 @@ export default function ChiSiamo() {
       </motion.section>
 
       <Separator />
+
+      {/* Cosa Facciamo Section */}
+      <motion.section className="py-32 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-primary/5" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={missionInView ? "visible" : "hidden"}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-4xl md:text-6xl font-bold mb-12 text-center"
+            >
+              Cosa <span className="text-gradient">Facciamo</span>
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "Eventi e Manifestazioni",
+                  description: "Organizziamo eventi come Sfincione Fest e Verdello Fest, promuovendo lo sfincione bianco di Bagheria e i prodotti tipici locali.",
+                  image: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=600&h=400&fit=crop&crop=entropy&auto=format"
+                },
+                {
+                  title: "Certificazione Prodotti",
+                  description: "Lavoriamo per il riconoscimento e la certificazione dei prodotti identitari del territorio bagherese.",
+                  image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&h=400&fit=crop&crop=entropy&auto=format"
+                },
+                {
+                  title: "Rigenerazione Urbana",
+                  description: "Avviamo progetti di rigenerazione urbana, come la riqualificazione di Piazza Carlo Doglio con \"Un giardino per Bagheria\".",
+                  image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop&crop=entropy&auto=format"
+                },
+                {
+                  title: "Educazione e Formazione",
+                  description: "Collaboriamo con scuole, enti e istituzioni per seminari, workshop e attività formative.",
+                  image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop&crop=entropy&auto=format"
+                }
+              ].map((item) => (
+                <motion.div
+                  key={item.title}
+                  variants={itemVariants}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="group"
+                >
+                  <Card className="glass-effect border-white/20 shadow-luxury hover:shadow-hover transition-luxury h-full relative overflow-hidden group-hover:scale-105 transform-gpu">
+                    {/* Background Image */}
+                    <div className="absolute inset-0">
+                      <div 
+                        className="w-full h-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: `url(${item.image})`,
+                        }}
+                      />
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                    </div>
+                    
+                    {/* Card Glow Effect */}
+                    <motion.div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary/30 to-accent/20 transition-opacity duration-500"
+                    />
+                    
+                    {/* Content */}
+                    <div className="relative z-10 h-full flex flex-col justify-end p-6">
+                      <CardTitle className="text-xl mb-3 text-white group-hover:text-gradient transition-all duration-300">
+                        {item.title}
+                      </CardTitle>
+                      <CardDescription className="text-base leading-relaxed text-white/90">
+                        {item.description}
+                      </CardDescription>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
 
       {/* Team */}
       <motion.section 
@@ -413,34 +415,34 @@ export default function ChiSiamo() {
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              Un gruppo di professionisti appassionati che lavorano insieme per 
-              creare eventi straordinari e momenti indimenticabili.
+              Un gruppo di cittadini, professionisti e volontari uniti dalla passione 
+              per Bagheria e il suo territorio, impegnati nella valorizzazione culturale.
             </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Maria Cristina",
-                role: "Fondatrice & Creative Director", 
-                initials: "MC",
-                description: "Con oltre 15 anni di esperienza nel settore eventi, Maria Cristina guida il team con passione e visione creativa.",
+                name: "Giuseppe",
+                role: "Presidente Associazione", 
+                initials: "GP",
+                description: "Impegnato nella valorizzazione del territorio bagherese, coordina i progetti e le collaborazioni istituzionali dell'associazione.",
                 gradient: "from-primary to-accent",
                 delay: 0
               },
               {
-                name: "Alessandro",
-                role: "Event Coordinator",
-                initials: "AL", 
-                description: "Specializzato in logistica eventi e coordinamento, Alessandro assicura che ogni dettaglio sia perfettamente orchestrato.",
+                name: "Maria",
+                role: "Responsabile Progetti Culturali",
+                initials: "MC", 
+                description: "Si occupa dell'organizzazione degli eventi culturali e della promozione dei prodotti tipici locali.",
                 gradient: "from-accent to-primary",
                 delay: 0.1
               },
               {
-                name: "Sofia",
-                role: "Wedding Planner",
-                initials: "SF",
-                description: "Esperta in matrimoni e cerimonie, Sofia trasforma i sogni delle coppie in realtà indimenticabili.",
+                name: "Francesco",
+                role: "Coordinatore Rigenerazione Urbana",
+                initials: "FR",
+                description: "Esperto in progetti di riqualificazione urbana, coordina le iniziative per il recupero degli spazi pubblici.",
                 gradient: "from-primary to-accent",
                 delay: 0.2
               }
@@ -603,14 +605,14 @@ export default function ChiSiamo() {
               variants={itemVariants}
               className="text-4xl md:text-6xl font-bold mb-6"
             >
-              Perché Scegliere <span className="text-gradient">La Piana D'oro</span>
+              Perché Sostenerci <span className="text-gradient">La Piana d'Oro</span>
             </motion.h2>
             <motion.p 
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             >
-              La nostra esperienza e il nostro approccio unico ci distinguono nel settore, 
-              garantendo risultati che superano ogni aspettativa.
+              Il nostro approccio partecipativo e l'impegno concreto per il territorio 
+              ci distinguono, garantendo risultati tangibili per la comunità bagherese.
             </motion.p>
           </motion.div>
 
@@ -618,22 +620,22 @@ export default function ChiSiamo() {
             {[
               {
                 icon: Award,
-                title: "Esperienza Consolidata",
-                description: "Oltre 15 anni nel settore con centinaia di eventi di successo alle spalle. La nostra esperienza è garanzia di qualità e professionalità.",
+                title: "Riconoscimenti Ufficiali",
+                description: "Bagheria è stata designata \"Destinazione del Gusto\" anche grazie ai nostri progetti di valorizzazione territoriale.",
                 color: "primary",
                 delay: 0
               },
               {
                 icon: Users,
-                title: "Team Multidisciplinare",
-                description: "Un team di specialisti che copre ogni aspetto dell'organizzazione eventi: dalla creatività alla logistica, dalla comunicazione al coordinamento.",
+                title: "Rete di Collaborazioni",
+                description: "Lavoriamo con scuole, istituzioni, enti locali e cittadini per creare progetti condivisi e di impatto duraturo.",
                 color: "accent",
                 delay: 0.1
               },
               {
                 icon: Heart,
-                title: "Approccio Personalizzato",
-                description: "Ogni cliente è unico e ogni evento racconta una storia diversa. Ascoltiamo, comprendiamo e realizziamo la vostra visione.",
+                title: "Impegno Autentico",
+                description: "Ogni progetto nasce dalla passione per il territorio e dall'impegno concreto per migliorare la nostra comunità.",
                 color: "primary",
                 delay: 0.2
               }
@@ -819,15 +821,15 @@ export default function ChiSiamo() {
                   className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
                 >
                   <span className="block">Pronti a</span>
-                  <span className="block text-gradient">Conoscerci Meglio?</span>
+                  <span className="block text-gradient">Unirvi a Noi?</span>
                 </motion.h2>
                 
                 <motion.p 
                   variants={itemVariants}
                   className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto"
                 >
-                  Scoprite come possiamo trasformare la vostra visione in un evento indimenticabile. 
-                  Contattateci per una consulenza gratuita e personalizzata.
+                  Scoprite come potete partecipare ai nostri progetti e contribuire alla valorizzazione 
+                  del territorio bagherese. Contattateci per sapere come diventare volontari.
                 </motion.p>
                 
                 {/* CTA Buttons */}
@@ -842,7 +844,7 @@ export default function ChiSiamo() {
                   >
                     <Button asChild size="lg" className="gradient-luxury text-accent-foreground shadow-luxury hover:shadow-hover transition-luxury text-lg px-10 py-6 relative overflow-hidden">
                       <Link href="/contatti" className="flex items-center gap-3">
-                        <span className="relative z-10">Richiedi Consulenza</span>
+                        <span className="relative z-10">Diventa Volontario</span>
                         <motion.div
                           className="relative z-10"
                           initial={{ x: 0 }}
