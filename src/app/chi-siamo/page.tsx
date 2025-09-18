@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 import { Separator } from "@/components/ui/separator"
-import { Users, Heart, Award, Target, ArrowRight, Sparkles, Star } from "lucide-react"
+import { Users, Heart, Award, Target, ArrowRight, Sparkles } from "lucide-react"
 
 export default function ChiSiamo() {
   const [heroRef, heroInView] = useInView({ 
@@ -59,26 +59,38 @@ export default function ChiSiamo() {
     <div className="flex flex-col relative">
       {/* Floating Particles Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 15 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-gradient-luxury rounded-full opacity-20"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: 4 + i * 0.3,
-              repeat: Infinity,
-              delay: i * 0.2,
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
+        {Array.from({ length: 15 }).map((_, i) => {
+          // Deterministic positions based on index to avoid hydration mismatch
+          const positions = [
+            { left: 22.45, top: 18.92 }, { left: 67.83, top: 45.61 }, { left: 89.12, top: 73.24 },
+            { left: 34.78, top: 56.89 }, { left: 12.34, top: 82.17 }, { left: 78.45, top: 29.63 },
+            { left: 45.67, top: 13.89 }, { left: 91.28, top: 64.52 }, { left: 23.45, top: 37.81 },
+            { left: 56.78, top: 89.12 }, { left: 38.92, top: 22.45 }, { left: 73.24, top: 67.83 },
+            { left: 15.67, top: 91.28 }, { left: 82.17, top: 34.78 }, { left: 29.63, top: 56.89 }
+          ]
+          const pos = positions[i] || { left: 50, top: 50 }
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-gradient-luxury rounded-full opacity-20"
+              animate={{
+                x: [0, 100, 0],
+                y: [0, -100, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: 4 + i * 0.3,
+                repeat: Infinity,
+                delay: i * 0.2,
+              }}
+              style={{
+                left: `${pos.left}%`,
+                top: `${pos.top}%`,
+              }}
+            />
+          )
+        })}
       </div>
 
       {/* Hero Section */}

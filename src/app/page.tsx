@@ -54,26 +54,40 @@ export default function Home() {
     <div className="flex flex-col relative">
       {/* Floating Particles Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-gradient-luxury rounded-full opacity-20"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3 + i * 0.5,
-              repeat: Infinity,
-              delay: i * 0.2,
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
+        {Array.from({ length: 20 }).map((_, i) => {
+          // Deterministic positions based on index to avoid hydration mismatch
+          const positions = [
+            { left: 15.23, top: 25.67 }, { left: 78.45, top: 12.34 }, { left: 45.12, top: 89.01 },
+            { left: 23.78, top: 56.89 }, { left: 67.34, top: 34.56 }, { left: 89.01, top: 78.45 },
+            { left: 12.34, top: 45.12 }, { left: 56.89, top: 23.78 }, { left: 34.56, top: 67.34 },
+            { left: 78.45, top: 89.01 }, { left: 25.67, top: 15.23 }, { left: 91.28, top: 42.67 },
+            { left: 38.92, top: 73.45 }, { left: 62.18, top: 19.87 }, { left: 17.65, top: 84.29 },
+            { left: 53.71, top: 27.83 }, { left: 81.94, top: 65.12 }, { left: 29.46, top: 48.75 },
+            { left: 72.13, top: 91.28 }, { left: 42.67, top: 38.92 }
+          ]
+          const pos = positions[i] || { left: 50, top: 50 }
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-gradient-luxury rounded-full opacity-20"
+              animate={{
+                x: [0, 100, 0],
+                y: [0, -100, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: 3 + i * 0.5,
+                repeat: Infinity,
+                delay: i * 0.2,
+              }}
+              style={{
+                left: `${pos.left}%`,
+                top: `${pos.top}%`,
+              }}
+            />
+          )
+        })}
       </div>
       {/* Hero Section */}
       <motion.section 
